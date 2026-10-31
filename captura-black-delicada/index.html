@@ -295,8 +295,9 @@
   .faixa { background: var(--amarelo); color: var(--preto); }
   .faixa i { color: var(--vermelho); }
 
-  .atencao .caixa { background: rgba(245,197,24,.08); border-color: #4A3B12; }
-  .atencao p { color: var(--branco); }
+  /* caixa "Atenção" amarela clara com letra escura (o Tiago viu letra branca no amarelo, 30/10) */
+  .atencao .wrap > div, .atencao .caixa { background: var(--amarelo-fundo); border-color: #F3DE8A; }
+  .atencao p, .atencao b { color: #1F1A15; }
   .tag { background: var(--amarelo); color: var(--preto); }
   .quem-e-pra { background: var(--escuro-2); }
   .quem-e-pra .lista p { background: var(--escuro-3); }
@@ -306,6 +307,7 @@
   .preco-hero .p1 { color: var(--amarelo); }
   .msg { background: var(--escuro-3); color: var(--branco); }
   .msg.eu { background: #1E3A2E; }
+  .msg.eu b { color: var(--amarelo); }
   .msg time { color: #8A7F72; }
   .pilha .linha.novo span:first-child { background: none; color: var(--amarelo); }
 
