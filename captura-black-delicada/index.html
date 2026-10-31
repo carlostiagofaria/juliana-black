@@ -327,6 +327,108 @@
   .final .form { background: var(--escuro); }
   footer { background: #0A0806; }
 </style>
+<style>
+  /* Ajustes do Richer na versão Black delicada (31/10):
+     carrossel automático sem barra, "Casos de dor" curto com foto, Prontuário num celular,
+     cartão de preço novo e garantia com selo fino. */
+
+  /* carrossel automático das capas */
+  .trilho { overflow: hidden; padding-bottom: 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
+  .trilho .fita { display: flex; gap: 12px; width: max-content; animation: desliza 70s linear infinite; }
+  .trilho.horiz .fita { animation-duration: 55s; animation-direction: reverse; }
+  .trilho:hover .fita { animation-play-state: paused; }
+  @keyframes desliza { to { transform: translateX(calc(-50% - 6px)); } }
+
+  /* casos de dor: pouco texto, com foto */
+  .dor { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; align-items: center; }
+  .dor figure { margin: 0; position: relative; }
+  .dor figure img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 28px; }
+  .dor figure::after { content: ""; position: absolute; inset: auto -14px -14px auto; width: 46%; height: 46%; border-radius: 28px; border: 2px solid var(--amarelo); z-index: -1; }
+  .dor .texto { display: grid; gap: 22px; }
+  .dor ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .dor li { display: grid; grid-template-columns: 34px 1fr; gap: 14px; align-items: center; background: var(--escuro-2); border: 1px solid var(--linha); border-radius: 16px; padding: 14px 18px; font-size: 17px; color: var(--branco); }
+  .dor li i { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: rgba(217,58,58,.14); color: #FF7B7B; font-style: normal; font-weight: 700; }
+  .dor .virada { margin: 4px 0 0; font-size: 22px; }
+
+  /* Prontuário Inteligente: celular */
+  .celular { width: min(100%, 370px); margin: 0 auto; background: #050505; border-radius: 44px; padding: 12px; box-shadow: 0 0 0 2px #2E261E, 0 30px 70px rgba(0,0,0,.6), 0 0 90px rgba(245,197,24,.12); }
+  .tela-cel { background: #F7F3EC; border-radius: 34px; overflow: hidden; display: grid; }
+  .cel-topo { display: flex; align-items: center; gap: 10px; padding: 22px 16px 12px; background: var(--branco); border-bottom: 1px solid #EDE5D8; }
+  .cel-topo .av { width: 32px; height: 32px; border-radius: 50%; background: var(--amarelo); display: grid; place-items: center; font: 700 13px var(--f); color: var(--preto); }
+  .cel-topo b { display: block; font: 600 14px var(--f); color: #1F1A15; }
+  .cel-topo small { font-size: 11.5px; color: #2D7A4A; }
+  .cel-conversa { padding: 14px 12px 18px; display: grid; gap: 10px; }
+  .bolha-audio { justify-self: end; display: flex; align-items: center; gap: 8px; background: #DCF5D3; border-radius: 16px 16px 4px 16px; padding: 9px 12px; }
+  .bolha-audio .play { width: 22px; height: 22px; border-radius: 50%; background: #1F7A6D; display: grid; place-items: center; }
+  .bolha-audio .play::after { content: ""; border-left: 7px solid #fff; border-top: 5px solid transparent; border-bottom: 5px solid transparent; margin-left: 2px; }
+  .onda { display: flex; align-items: center; gap: 2px; height: 20px; }
+  .onda i { width: 3px; border-radius: 2px; background: #1F7A6D; opacity: .7; }
+  .bolha-audio small { font-size: 11px; color: #4C6B5F; }
+  .bolha-soap { background: var(--branco); border-radius: 16px 16px 16px 4px; padding: 12px 13px; display: grid; gap: 8px; box-shadow: 0 2px 6px rgba(60,40,10,.06); }
+  .bolha-soap .tit { font: 600 13px var(--f); color: #1F1A15; }
+  .bolha-soap p { display: grid; grid-template-columns: 22px 1fr; gap: 8px; font-size: 11.8px; line-height: 1.4; color: #3A322B; }
+  .bolha-soap p b { display: grid; place-items: center; height: 22px; border-radius: 7px; background: var(--amarelo); color: var(--preto); font: 700 12px var(--f); }
+
+  /* cartão de preço */
+  .oferta-card { margin-top: 44px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 0; border-radius: 30px; overflow: hidden; border: 1px solid #3A2F14; box-shadow: 0 0 0 8px rgba(245,197,24,.05); }
+  .oferta-card .inclui-lista { background: var(--escuro-2); padding: 38px 40px; display: grid; gap: 6px; align-content: start; }
+  .oferta-card .inclui-lista h3 { font-size: 26px; margin-bottom: 12px; }
+  .oferta-card .linha { display: flex; align-items: baseline; gap: 10px; padding: 9px 0; font-size: 16px; color: var(--branco); }
+  .oferta-card .linha::after { content: ""; order: 2; flex: 1; border-bottom: 1px dotted #4A3E30; transform: translateY(-4px); }
+  .oferta-card .linha span:first-child { order: 1; }
+  .oferta-card .linha span:last-child { order: 3; color: var(--texto-2); white-space: nowrap; }
+  .oferta-card .linha.novo span:first-child { color: var(--amarelo); font-weight: 600; }
+  .oferta-card .linha.total { margin-top: 10px; font: 600 20px var(--serif); }
+  .oferta-card .linha.total span:last-child { text-decoration: line-through; }
+  .oferta-card .preco { background: linear-gradient(160deg, #FFE57A, var(--amarelo) 55%, #E9B400); color: var(--preto); padding: 40px 36px; display: grid; gap: 6px; align-content: center; justify-items: center; text-align: center; }
+  .oferta-card .preco .chip-b { background: var(--preto); color: var(--amarelo); border-radius: 999px; padding: 7px 14px; font: 600 13px var(--f); margin-bottom: 10px; }
+  .oferta-card .preco .de { font-size: 16px; color: #5A4A10; }
+  .oferta-card .preco .de s { font-weight: 600; }
+  .oferta-card .preco .por { font: 400 italic 20px var(--serif); color: #2B2206; }
+  .oferta-card .preco .valor { display: flex; align-items: flex-start; gap: 6px; font: 600 clamp(60px, 6vw, 84px)/1 var(--serif); letter-spacing: -.02em; }
+  .oferta-card .preco .valor small { font: 600 18px/1 var(--f); margin-top: 12px; }
+  .oferta-card .preco .avista { font-size: 17px; font-weight: 600; margin-bottom: 14px; }
+  .oferta-card .preco .btn { background: var(--preto); color: var(--amarelo); max-width: 340px; }
+  .oferta-card .preco .btn:hover { background: #000; }
+  .oferta-card .mini-selos { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 14px; margin-top: 14px; font-size: 12.5px; font-weight: 600; color: #3E330B; }
+  .oferta-card .mini-selos span { display: inline-flex; align-items: center; gap: 5px; }
+  .oferta-card .mini-selos svg { width: 14px; height: 14px; }
+
+  /* garantia: cartão claro com selo fino que gira */
+  .garantia2 .cartao-g { display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: center; background: var(--amarelo-fundo); border-radius: 30px; padding: 44px 48px; }
+  .selo-g { position: relative; width: 190px; aspect-ratio: 1; display: grid; place-items: center; }
+  .selo-g svg { position: absolute; inset: 0; width: 100%; height: 100%; animation: gira 30s linear infinite; }
+  .selo-g svg text { font: 600 10.5px var(--f); letter-spacing: .22em; fill: #6B5300; text-transform: uppercase; }
+  .selo-g .centro { width: 128px; aspect-ratio: 1; border-radius: 50%; background: var(--branco); border: 2px solid var(--amarelo); display: grid; place-content: center; text-align: center; }
+  .selo-g .centro b { font: 600 56px/.9 var(--serif); color: #1F1A15; }
+  .selo-g .centro span { font: 600 12px var(--f); color: #756A60; }
+  @keyframes gira { to { transform: rotate(360deg); } }
+  .garantia2 h2 { color: #1F1A15; }
+  .garantia2 .texto { display: grid; gap: 14px; }
+  .garantia2 .texto > p { font-size: 17.5px; color: #3A322B; max-width: 640px; }
+  .garantia2 .pontos { display: flex; flex-wrap: wrap; gap: 8px; }
+  .garantia2 .pontos span { background: var(--branco); color: #1F1A15; border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .dor { grid-template-columns: 1fr; gap: 28px; }
+    .dor figure { width: min(78%, 320px); justify-self: center; }
+    .dor li { font-size: 15.5px; padding: 12px 14px; }
+    .dor .virada { font-size: 19px; }
+    .oferta-card { grid-template-columns: 1fr; }
+    .oferta-card .inclui-lista { padding: 26px 20px; }
+    .oferta-card .linha { font-size: 14px; }
+    .oferta-card .preco { padding: 32px 20px; }
+    .garantia2 .cartao-g { grid-template-columns: 1fr; justify-items: center; text-align: center; padding: 32px 20px; gap: 24px; }
+    .garantia2 .pontos { justify-content: center; }
+    .selo-g { width: 160px; }
+    .selo-g .centro { width: 108px; }
+    .selo-g .centro b { font-size: 46px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .trilho { overflow-x: auto; scrollbar-width: none; }
+    .trilho::-webkit-scrollbar { display: none; }
+  }
+</style>
 </head>
 <body>
 
@@ -430,16 +532,20 @@
 
     <article class="produto inv">
       <div class="prod-vitrine">
-        <div class="soap" role="img" aria-label="Ficha do Prontuário Inteligente: o áudio da consulta vira prontuário SOAP pronto">
-          <div class="soap-cab"><span>Prontuário Inteligente · Método SOAP</span><em>PRONTO</em></div>
-          <span class="audio">Áudio da consulta · 2:14</span>
-          <div class="letras">
-            <div><b>S</b><span>Subjetivo</span><i></i><i></i></div>
-            <div><b>O</b><span>Objetivo</span><i></i><i></i></div>
-            <div><b>A</b><span>Avaliação</span><i></i><i></i></div>
-            <div><b>P</b><span>Plano</span><i></i><i></i></div>
+        <div class="celular" role="img" aria-label="Celular com o Prontuário Inteligente: o áudio da consulta vira um prontuário no Método SOAP">
+          <div class="tela-cel">
+            <div class="cel-topo"><span class="av">PI</span><div><b>Prontuário Inteligente</b><small>online</small></div></div>
+            <div class="cel-conversa">
+              <div class="bolha-audio"><span class="play"></span><span class="onda"><i style="height:6px"></i><i style="height:12px"></i><i style="height:18px"></i><i style="height:9px"></i><i style="height:15px"></i><i style="height:20px"></i><i style="height:11px"></i><i style="height:7px"></i><i style="height:16px"></i><i style="height:13px"></i><i style="height:19px"></i><i style="height:8px"></i><i style="height:14px"></i><i style="height:10px"></i><i style="height:17px"></i><i style="height:6px"></i><i style="height:12px"></i></span><small>2:14</small></div>
+              <div class="bolha-soap">
+                <span class="tit">Prontuário pronto · Método SOAP</span>
+                <p><b>S</b>Dor na ATM direita há 3 meses, pior ao mastigar e ao acordar.</p>
+                <p><b>O</b>Estalido na abertura, abertura bucal de 38 mm, dor à palpação do masseter.</p>
+                <p><b>A</b>Hipótese de dor miofascial com deslocamento de disco com redução.</p>
+                <p><b>P</b>Orientações, placa estabilizadora e retorno em 15 dias.</p>
+              </div>
+            </div>
           </div>
-          <div class="pronto">✓ Gerado em 28 segundos</div>
         </div>
       </div>
       <div class="prod-texto">
