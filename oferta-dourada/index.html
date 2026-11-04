@@ -213,6 +213,24 @@ footer .contorno{right:-20px;bottom:-30px;font-size:clamp(90px,16vw,220px)}
   .fitas{height:100px}
 }
 
+/* ===== Richer 04/11: nada de vermelho; tudo que era vermelho/vinho virou dourado ===== */
+:root{--vermelho:#c9a45c;--vermelho2:#a8843f;--vinho:#a8843f}
+.faixa-topo .x{color:#1b1408}
+.btn{background:linear-gradient(180deg,#ecd08e,#b08b45);color:#1b1408;box-shadow:0 10px 30px -10px rgba(201,164,92,.65),inset 0 1px 0 rgba(255,255,255,.4)}
+.btn:hover{box-shadow:0 16px 34px -10px rgba(201,164,92,.85),inset 0 1px 0 rgba(255,255,255,.4)}
+.hero{background:radial-gradient(ellipse 60% 70% at 78% 40%,rgba(201,164,92,.20),transparent 60%),radial-gradient(ellipse 45% 50% at 8% 70%,rgba(201,164,92,.08),transparent 70%),var(--fundo)}
+.alerta svg.tri{color:var(--ouro-claro)}
+.fita-d{background:linear-gradient(90deg,#9c7a3c,#dcbd79 50%,#9c7a3c);color:#1b1408;font-weight:600}
+.fita-d i{color:#5a4320}
+.faixa-cta{background:linear-gradient(90deg,#9c7a3c,#d9bb78 50%,#9c7a3c)}
+.faixa-cta::before,.faixa-cta::after{border-color:rgba(0,0,0,.07)}
+.faixa-cta h2{color:#1b1408}
+.faixa-cta h2 em{color:#4a3512}
+.faixa-cta .acao p{color:#2a1f0c}
+.faixa-cta .btn{background:#141313;color:var(--ouro-claro);box-shadow:0 14px 30px -12px rgba(0,0,0,.7)}
+.campo.invalido{border-color:var(--ouro-claro);background:rgba(201,164,92,.12)}
+.erro{color:var(--ouro-claro)}
+
 /* ---------- só da oferta ---------- */
 .fileira{margin-top:44px}
 .fileira h3{font-family:var(--serif);font-weight:400;text-transform:uppercase;letter-spacing:.06em;font-size:18px;color:var(--branco);margin-bottom:16px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
