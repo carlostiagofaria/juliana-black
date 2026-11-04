@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#121111">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600;1,700&family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <style>
 /* Black dourada da Dra. Juliana (V4, 04/11/2026)
    Referência: INSIDE CARE360 (Behance) mandada pelo Carlos.
@@ -230,6 +230,19 @@ footer .contorno{right:-20px;bottom:-30px;font-size:clamp(90px,16vw,220px)}
 .faixa-cta .btn{background:#141313;color:var(--ouro-claro);box-shadow:0 14px 30px -12px rgba(0,0,0,.7)}
 .campo.invalido{border-color:var(--ouro-claro);background:rgba(201,164,92,.12)}
 .erro{color:var(--ouro-claro)}
+
+/* ===== Carlos 04/11: títulos em Lora (Fraunces fina demais) e faixa dourada sem cara de botão ===== */
+:root{--serif:"Lora",Georgia,serif}
+.tit{font-weight:500;letter-spacing:0;line-height:1.12;font-variation-settings:normal}
+.tit em{font-weight:600}
+.alerta h2,.faixa-cta h2{font-weight:500}
+.alerta h2 em,.faixa-cta h2 em{font-weight:600}
+.virada{font-weight:500}
+.num b,.ing-nome,.valor,.sucesso h3,.selo7 .c b{font-weight:500}
+.hero-foto .nome b{font-weight:600}
+.selo-ouro{background:none;box-shadow:none;border-radius:0;border:0;border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);color:var(--ouro-claro);font-weight:500;font-size:16px;margin:28px auto 0;padding:14px 10px}
+.selo-ouro svg{width:18px;height:18px}
+@media (max-width:900px){.selo-ouro{flex-direction:row;font-size:14px;gap:8px 18px;margin-top:6px}}
 
 </style>
 </head>

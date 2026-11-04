@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#121111">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600;1,700&family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <style>
 /* Black dourada da Dra. Juliana (V4, 04/11/2026)
    Referência: INSIDE CARE360 (Behance) mandada pelo Carlos.
@@ -231,6 +231,19 @@ footer .contorno{right:-20px;bottom:-30px;font-size:clamp(90px,16vw,220px)}
 .campo.invalido{border-color:var(--ouro-claro);background:rgba(201,164,92,.12)}
 .erro{color:var(--ouro-claro)}
 
+/* ===== Carlos 04/11: títulos em Lora (Fraunces fina demais) e faixa dourada sem cara de botão ===== */
+:root{--serif:"Lora",Georgia,serif}
+.tit{font-weight:500;letter-spacing:0;line-height:1.12;font-variation-settings:normal}
+.tit em{font-weight:600}
+.alerta h2,.faixa-cta h2{font-weight:500}
+.alerta h2 em,.faixa-cta h2 em{font-weight:600}
+.virada{font-weight:500}
+.num b,.ing-nome,.valor,.sucesso h3,.selo7 .c b{font-weight:500}
+.hero-foto .nome b{font-weight:600}
+.selo-ouro{background:none;box-shadow:none;border-radius:0;border:0;border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);color:var(--ouro-claro);font-weight:500;font-size:16px;margin:28px auto 0;padding:14px 10px}
+.selo-ouro svg{width:18px;height:18px}
+@media (max-width:900px){.selo-ouro{flex-direction:row;font-size:14px;gap:8px 18px;margin-top:6px}}
+
 /* ---------- só da oferta ---------- */
 .fileira{margin-top:44px}
 .fileira h3{font-family:var(--serif);font-weight:400;text-transform:uppercase;letter-spacing:.06em;font-size:18px;color:var(--branco);margin-bottom:16px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
@@ -246,7 +259,7 @@ footer .contorno{right:-20px;bottom:-30px;font-size:clamp(90px,16vw,220px)}
 .dor-grade figure img{width:100%;border-radius:8px;border:1px solid var(--linha);box-shadow:0 40px 80px -40px #000}
 .dor-grade .pilulas{justify-items:start;margin:26px 0 30px}
 .dor-grade .pilula{text-align:left;border-radius:10px}
-.virada{border-left:2px solid var(--vermelho);padding:6px 0 6px 18px;font-family:var(--serif);font-size:22px;font-weight:300;line-height:1.3;color:var(--branco)}
+.virada{border-left:2px solid var(--vermelho);padding:6px 0 6px 18px;font-family:var(--serif);font-size:22px;font-weight:500;line-height:1.35;color:var(--branco)}
 .virada em{font-style:italic;color:var(--ouro-claro);font-weight:500}
 
 .benef{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
