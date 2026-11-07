@@ -402,6 +402,11 @@ footer .contorno{right:-20px;bottom:-30px;font-size:clamp(90px,16vw,220px)}
 @media (min-width:901px){
   html body .hero-foto .nome{position:relative;left:auto;bottom:auto;transform:none;display:block;width:max-content;max-width:100%;margin:-34px auto 0;padding:10px 20px 11px;background:var(--fundo2);border:1px solid var(--linha);border-radius:6px;box-shadow:0 10px 26px rgba(0,0,0,.45);white-space:normal}
 }
+/* 07/11 Carlos: no celular o nome da Dra. também numa caixinha, com contraste (antes ficava apagado em cima dos braços dela) */
+@media (max-width:900px){
+  html body .hero-foto .nome{white-space:nowrap;padding:8px 16px 9px;background:rgba(26,24,23,.94);border:1px solid var(--linha);border-radius:6px;box-shadow:0 10px 26px rgba(0,0,0,.5);font-size:12px}
+  html body .hero-foto .nome b{font-size:13.5px}
+}
 </style>
 
 <script>
