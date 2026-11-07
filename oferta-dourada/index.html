@@ -364,6 +364,14 @@ footer .contorno{right:-20px;bottom:-30px;font-size:clamp(90px,16vw,220px)}
   .ing-nome{font-size:28px}
   .depos figure{width:240px}
 }
+/* 07/11 Richer: fotos menores no celular para a página rolar mais rápido */
+@media (max-width:900px){
+  html body .hero .hero-foto{max-width:270px}
+  .dor-grade figure img,.autora figure img,.final .foto-final img{aspect-ratio:5/4;height:auto;max-height:none;object-fit:cover;object-position:center 18%}
+  .pront-cena>img{aspect-ratio:4/3}
+  .benef img{aspect-ratio:16/10}
+  .mosaico{grid-auto-rows:150px}
+}
 </style>
 </head>
 <body>
@@ -382,7 +390,6 @@ footer .contorno{right:-20px;bottom:-30px;font-size:clamp(90px,16vw,220px)}
       </div>
       <h1 class="tit">Domine a DTM <em>sem achismos.</em></h1>
       <p class="sub">Um ano inteiro no <strong>Clube Por Dentro da Dor Orofacial</strong>, com a <strong>atualização do Prontuário Inteligente</strong> junto, numa <em>condição especial de Black.</em></p>
-      <a class="btn" href="#oferta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8a2 2 0 0 0 0 4v0a2 2 0 0 0 0 4v2h18v-2a2 2 0 0 1 0-4 2 2 0 0 1 0-4V6H3z"/><path d="M9 6v12" stroke-dasharray="2 2"/></svg>Quero conhecer a oferta</a>
       <p class="nota">Acesso imediato · Garantia de 7 dias · Cartão, Pix ou boleto</p>
     </div>
     <figure class="hero-foto">

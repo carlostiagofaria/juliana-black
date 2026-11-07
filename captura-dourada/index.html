@@ -390,6 +390,14 @@ footer .contorno{right:-20px;bottom:-30px;font-size:clamp(90px,16vw,220px)}
 <style>
 .final .foto-final img{border-radius:8px;width:100%;max-height:640px;object-fit:cover;object-position:center 20%;box-shadow:0 40px 80px -40px #000;border:1px solid var(--linha)}
 @media (max-width:900px){.final .foto-final{order:-1}.final .foto-final img{max-height:420px}}
+/* 07/11 Richer: fotos menores no celular para a página rolar mais rápido */
+@media (max-width:900px){
+  html body .hero .hero-foto{max-width:270px}
+  .dor-grade figure img,.autora figure img,.final .foto-final img{aspect-ratio:5/4;height:auto;max-height:none;object-fit:cover;object-position:center 18%}
+  .pront-cena>img{aspect-ratio:4/3}
+  .benef img{aspect-ratio:16/10}
+  .mosaico{grid-auto-rows:150px}
+}
 </style>
 
 <script>
